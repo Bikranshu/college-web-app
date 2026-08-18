@@ -54,17 +54,19 @@ const Index = () => {
           >
             {/* Image Container */}
             <div className="relative aspect-square bg-gray-50 overflow-hidden">
-              {product.thumbnail ? (
-                <img
-                  src={product.thumbnail}
-                  alt={product.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  No image
-                </div>
-              )}
+              <Link to={"/collection/detail/" + product.id}>
+                {product.thumbnail ? (
+                  <img
+                    src={product.thumbnail}
+                    alt={product.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-gray-400">
+                    No image
+                  </div>
+                )}
+              </Link>
 
               {/* Discount Badge */}
               {product.discountPercentage > 0 && (

@@ -8,7 +8,10 @@ import AppLayout from "../layouts/AppLayout";
 import AuthLayout from "../layouts/AuthLayout";
 
 import Home from "../pages/home";
+import About from "../pages/about";
 import Collection from "../pages/collection";
+import CollectionDetail from "../pages/collection/Detail";
+import Contact from "../pages/contact";
 import Login from "../pages/auth/Login";
 import Signup from "../pages/auth/Signup";
 import Dashboard from "../pages/dashboard";
@@ -22,6 +25,12 @@ const RouterRoutes = () => {
           <Route path="/auth/signup" element={<Signup />} />
           <Route path="/" element={<Home />} />
           <Route path="/collection" element={<Collection />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/contact-us" element={<Contact />} />
+          <Route
+            path="/collection/detail/:productId"
+            element={<CollectionDetail />}
+          />
         </Route>
       </Route>
       <Route element={<PrivateRoute />}>
